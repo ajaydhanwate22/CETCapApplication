@@ -15,10 +15,7 @@
     "@react-navigation/native-stack": "^7.3.10",
     "react": "19.0.0",
     "react-native": "0.79.1",
-<<<<<<< HEAD
-=======
     "react-native-linear-gradient": "^2.8.3",
->>>>>>> 5e628b8eee57ab61f9c3b5c172c9bd10bc8e4389
     "react-native-safe-area-context": "^5.4.0",
     "react-native-screens": "^4.10.0"
   },
