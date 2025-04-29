@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('UniversityCollegeSearch'); 
+      navigation.replace(''); 
     }, 300); 
 
     return () => clearTimeout(timer); 
@@ -20,7 +20,7 @@ const SplashScreen = ({ navigation }) => {
     >
       <View style={styles.innerContainer}>
         <Image
-          source={require('../Assets/CETCapApplication.jpeg')}
+          source={require('../Assets/universitylogo.png')}
           style={styles.logo}
           resizeMode="contain"
         />
