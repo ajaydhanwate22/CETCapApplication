@@ -1,45 +1,48 @@
 // ./Screens/Home.js
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 
 const FormFillingGuidence = ({navigation}) => {
+
   return (
-    <View style={styles.container}>
-      {/* Logo Text */}
-      <Text style={styles.logoText}>
-        <Text style={styles.logoPart}>LOGO</Text>
-        <Text style={styles.textPart}>TEXT</Text>
-      </Text>
+<SafeAreaView style={styles.container}>
+  {/* Main Content */}
+  <View style={styles.content}>
+    <Image
+      source={require('../Assets/images/universitylogo.png')}
+      style={{ resizeMode: 'contain', width: '100%', height: 50}}
+    />
 
-      <Image
-        source={require('../Assets/images/form-filling.png')}
-        style={styles.mainImage}
-      />
+    <Image
+      source={require('../Assets/images/form-filling.png')}
+      style={{ width: '100%',height: 300, resizeMode: 'contain'}}
+    />
 
-      <Text style={styles.title}>University & College Search</Text>
+    <Text style={styles.title}>Form-Filling
+    Guidance</Text>
 
-      <Text style={styles.subtitle}>
-        Filter your options based on eligibility performance, and preferences.
-      </Text>
+    <Text style={styles.subtitle}>
+    Filter your options based on eligibility performance, and preferences.
+    </Text>
+  </View>
 
-      {/* Bottom Navigation */}
-      <View style={styles.bottomWrapper}>
-        <View style={styles.bottomNav}>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('UniversityCollegeSearch')}>
-            <Text style={styles.bottomText}>Skip</Text>
-          </TouchableOpacity>
+  {/* Bottom Navigation */}
+  <View style={styles.bottomWrapper}>
+    <View style={styles.bottomNav}>
+      <TouchableOpacity onPress={() => navigation.navigate('UniversityCollegeSearch')}>
+        <Text style={styles.bottomText}>Skip</Text>
+      </TouchableOpacity>
 
-          <TouchableOpacity
-            onPress={() => navigation.navigate('CollegeInsights')}>
-            <Text style={styles.bottomText}>Next</Text>
-          </TouchableOpacity>
-        </View>
-
-        {/* Small Line */}
-        <View style={styles.line} />
-      </View>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('CollegeInsights')}>
+        <Text style={styles.bottomText}>Next</Text>
+      </TouchableOpacity>
     </View>
+
+    {/* Small Line */}
+    <View style={styles.line} />
+  </View>
+</SafeAreaView>
   );
 };
 
@@ -47,11 +50,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f8c8f9',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingTop: 60,
-    paddingBottom: 30,
+    padding: 20,
     justifyContent: 'space-between',
+  },
+  
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 20,
   },
   logoText: {
     fontSize: 28,
@@ -69,17 +76,21 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   title: {
-    fontSize: 26,
-    fontWeight: '700',
+    fontSize: 24,
+    // fontWeight: '700',
     textAlign: 'center',
     color: '#000000',
+    paddingHorizontal: 20, 
+    fontFamily:'Poppins-Bold',
+    // backgroundColor:'red'
   },
   subtitle: {
     fontSize: 20,
-    fontWeight: '500',
+    // fontWeight: '500',
     textAlign: 'center',
     color: '#333333',
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
+    fontFamily:'Poppins-Medium',
   },
   bottomWrapper: {
     width: '100%',
@@ -93,16 +104,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   bottomText: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '600',
     color: '#000',
   },
   line: {
     marginTop: 10,
-    width: 180,
+    width: '40%',
     height: 10,
     borderRadius: 20,
     backgroundColor: '#E6E2E2',
+    justifyContent:'center',
+    alignItems:"center"
   },
 });
 
