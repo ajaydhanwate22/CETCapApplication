@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
-import { View, StyleSheet, Image } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+// import React, { useEffect } from 'react';
+// import { View, StyleSheet, Image } from 'react-native';
+// import LinearGradient from 'react-native-linear-gradient';
 
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace(''); 
+      navigation.replace('UniversityCollegeSearch'); 
     }, 300); 
 
-    return () => clearTimeout(timer); 
-  }, []);
+//     return () => clearTimeout(timer); 
+//   }, []);
 
   return (
     <LinearGradient
@@ -20,7 +20,7 @@ const SplashScreen = ({ navigation }) => {
     >
       <View style={styles.innerContainer}>
         <Image
-          source={require('../Assets/universitylogo.png')}
+          source={require('../Assets/CETCapApplication.jpeg')}
           style={styles.logo}
           resizeMode="contain"
         />
@@ -29,20 +29,20 @@ const SplashScreen = ({ navigation }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  innerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  logo: {
-    width: 250,
-    height: 250,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   innerContainer: {
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   },
+//   logo: {
+//     width: 250,
+//     height: 250,
+//   },
+// });
 
-export default SplashScreen;
+// export default SplashScreen;
