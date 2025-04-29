@@ -23,6 +23,10 @@ const UniversityCollegeSearch = ({navigation}) => {
     <Text style={styles.subtitle}>
       Filter your options based on eligibility performance, and preferences.
     </Text>
+{/* 
+    <Text style={styles.subtitle}>
+      Filter your options based on eligibility performance, and preferences.
+    </Text> */}
   </View>
 
   {/* Bottom Navigation */}
