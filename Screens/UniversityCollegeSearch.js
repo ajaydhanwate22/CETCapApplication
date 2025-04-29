@@ -35,7 +35,7 @@ const UniversityCollegeSearch = ({navigation}) => {
           </TouchableOpacity>
         </View>
 
-        {/* Small Line */}
+
         <View style={styles.line} />
       </View>
     </View>
