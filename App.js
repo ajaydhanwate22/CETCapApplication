@@ -12,11 +12,12 @@ import CollegeInsights from './Screens/CollegeInsights';
 import ReminderandSupport from './Screens/ReminderandSupport';
 import Login from './Screens/Login';
 import SignUp from './Screens/SignUp';
-import SplashScreen from './Screens/SplashScreen';
 import Hometab from './Screens/HomeSection/Hometab';
 import Helptab from './Screens/HelpSection/Helptab';
 import Profiletab from './Screens/ProfileSection/Profiletab';
 import Notifications from './Screens/Notifications';
+import SplashScreen from './Screens/Splashscreen';
+import EditProfileTab from './Screens/ProfileSection/EditProfileTab';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -77,7 +78,7 @@ function BottomTabs() {
           shadowColor: 'transparent', // iOS shadow off
         },
         tabBarIconStyle: {
-          size: 35,                  // Increase the size of the icons
+          size: 35,               
         },
       })}
     >
@@ -103,6 +104,8 @@ export default function App() {
         <Stack.Screen  name="Login" component={Login}  options={{ headerShown: false }} />
         <Stack.Screen  name="SignUp" component={SignUp}  options={{ headerShown: false }} />
         <Stack.Screen  name="Notifications" component={Notifications}  options={{ headerShown: false }} />
+        <Stack.Screen  name="EditProfile" component={EditProfileTab}  options={{ headerShown: false }} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
