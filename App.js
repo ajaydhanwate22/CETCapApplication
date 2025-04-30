@@ -2,14 +2,13 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
 import UniversityCollegeSearch from './Screens/UniversityCollegeSearch';
 import FormFillingGuidence from './Screens/FormFillingGuidence';
 import CollegeInsights from './Screens/CollegeInsights';
 import ReminderandSupport from './Screens/ReminderandSupport';
 import Login from './Screens/Login';
 import SignUp from './Screens/SignUp';
-import SplashScreen from './Screens/SplashScreen';
+import SplashScreen from './Screens/Splashscreen';
 
 const Stack = createNativeStackNavigator();
 
