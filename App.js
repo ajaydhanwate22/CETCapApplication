@@ -18,6 +18,9 @@ import Profiletab from './Screens/ProfileSection/Profiletab';
 import Notifications from './Screens/Notifications';
 import SplashScreen from './Screens/Splashscreen';
 import EditProfileTab from './Screens/ProfileSection/EditProfileTab';
+import CapGuide from './Screens/HomeSection/CapGuide';
+import AdmissionGuide from './Screens/HomeSection/AdmissionGuide';
+import Documentneed from './Screens/HomeSection/Documentneed';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,6 +34,9 @@ function HomeStackScreen() {
     <HomeStack.Navigator screenOptions={{ headerShown: false }}>
       <HomeStack.Screen name="Hometab" component={Hometab} />
       <HomeStack.Screen name="Notifications" component={Notifications} />
+      <HomeStack.Screen name="CapGuide" component={CapGuide} />
+      <HomeStack.Screen name="AdmissionGuide" component={AdmissionGuide} />
+      <HomeStack.Screen name="Documentneed" component={Documentneed} />
       {/* <HomeStack.Screen name="CapRound" component={CapRound} />
       <HomeStack.Screen name="AdmissionGuide" component={AdmissionGuide} />
       <HomeStack.Screen name="CapFormDetails" component={CapFormDetails} />
@@ -106,6 +112,9 @@ export default function App() {
         <Stack.Screen  name="Notifications" component={Notifications}  options={{ headerShown: false }} />
         <Stack.Screen  name="EditProfile" component={EditProfileTab}  options={{ headerShown: false }} />
         
+        <Stack.Screen  name="CapGuide" component={CapGuide}  options={{ headerShown: false }} />
+        <Stack.Screen  name="AdmissionGuide" component={AdmissionGuide}  options={{ headerShown: false }} />
+        <Stack.Screen  name="Documentneed" component={Documentneed}  options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

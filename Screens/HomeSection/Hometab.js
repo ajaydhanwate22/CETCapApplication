@@ -43,16 +43,16 @@ const Hometab = ({navigation}) => {
             </View>
 
             <View style={{width:'100%',justifyContent:'space-between', alignItems:'center', flexDirection:'row',paddingVertical:10}}>
-                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10,padding:20}}>
+                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10,padding:20}} onPress={() => navigation.navigate('CapGuide')} > 
                     <Text style={{fontSize:18, color:"#00000", fontWeight:'bold',textAlign:'center'}}>CAP Guide</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10, padding:20}}>
+                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10, padding:20}}  onPress={() => navigation.navigate('Documentneed')}>
                 <Text style={{fontSize:18, color:"#00000", fontWeight:'bold', textAlign:'center'}}>Document you need</Text>
                 </TouchableOpacity>
             </View>
 
             <View style={{width:'100%',justifyContent:'space-between', alignItems:'center', flexDirection:'row',paddingVertical:10}}>
-                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10,padding:20}}>
+                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10,padding:20}} onPress={() => navigation.navigate('AdmissionGuide')}>
                     <Text style={{fontSize:18, color:"#00000", fontWeight:'bold',textAlign:'center'}}>Admission Guide</Text>
                 </TouchableOpacity>
                 {/* <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10, padding:20}}>
