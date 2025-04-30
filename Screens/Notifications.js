@@ -16,8 +16,8 @@ const Notifications = ({navigation}) => {
         <Header/>
 
         {/* body Contained */}
-
         
+
   </ScrollView>
 </SafeAreaView>
   );

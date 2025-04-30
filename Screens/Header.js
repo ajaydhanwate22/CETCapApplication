@@ -12,10 +12,7 @@ const Header = () => {
     const navigation = useNavigation();
 
   return (
-<SafeAreaView style={styles.container}>
-    <ScrollView>
 
-        {/* header */}
         <View style={{paddingTop:40, paddingHorizontal:20, borderBottomWidth:0.3, borderBottomColor:"#000000", paddingBottom:20, elevation:1}}>
             <View style={{justifyContent:'space-between', flexDirection:'row', alignItems:"center"}}>
                     {/* <Image source={require('../../Assets/images/universitylogo.png')} style={{height: 50, width:"50%"}}/> */}
@@ -33,8 +30,6 @@ const Header = () => {
                 </View>
             </View>
         </View>
-  </ScrollView>
-</SafeAreaView>
   );
 };
 
