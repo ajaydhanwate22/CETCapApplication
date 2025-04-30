@@ -10,14 +10,19 @@ const Notifications = ({navigation}) => {
 
   return (
 <SafeAreaView style={styles.container}>
-    <ScrollView>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 
         {/* header */}
         <Header/>
 
         {/* body Contained */}
-        
 
+        <View style={{justifyContent:'center', alignItems:'center', flex:1, gap:20, paddingHorizontal:60}}>
+            <FontAwesome name="bell-o" size={40} color="#A7A2A2" />
+            <Text style={{textAlign:'center', fontSize:24, color:'#000000',fontWeight:'bold'}}>No Notification</Text>
+            <Text style={{textAlign:'center', fontSize:15, color:'#B5B1B1',fontWeight:'bold'}}>We’ll let you know when there will be something to update you</Text>
+        </View>
+        
   </ScrollView>
 </SafeAreaView>
   );
