@@ -2,17 +2,17 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView} from 'react-native';
 
-const UniversityCollegeSearch = ({navigation}) => {
+const Profiletab = ({navigation}) => {
 
   return (
 <SafeAreaView style={styles.container}>
   {/* Main Content */}
   <View style={styles.content}>
-    <Image source={require('../Assets/images/universitylogo.png')} style={{ resizeMode: 'contain', width: '100%', height: 50}}/>
+    {/* <Image source={require('../Assets/images/universitylogo.png')} style={{ resizeMode: 'contain', width: '100%', height: 50}}/>
 
-    <Image  source={require('../Assets/images/universityCollege.png')} style={{ width: '100%',height: 300, resizeMode: 'contain'}} />
+    <Image  source={require('../Assets/images/universityCollege.png')} style={{ width: '100%',height: 300, resizeMode: 'contain'}} /> */}
 
-    <Text style={styles.title}>University & Collage Search</Text>
+    <Text style={styles.title}>Profile tab</Text>
 
     <Text style={styles.subtitle}>
       Filter your options based on eligibility performance, and preferences.
@@ -21,23 +21,6 @@ const UniversityCollegeSearch = ({navigation}) => {
     <Text style={styles.subtitle}>
       Filter your options based on eligibility performance, and preferences.
     </Text> */}
-  </View>
-
-  {/* Bottom Navigation */}
-  <View style={styles.bottomWrapper}>
-    <View style={styles.bottomNav}>
-      <TouchableOpacity>
-        <Text style={styles.bottomText}>Skip</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        onPress={() => navigation.navigate('FormFillingGuidence')}>
-        <Text style={styles.bottomText}>Next</Text>
-      </TouchableOpacity>
-    </View>
-
-    {/* Small Line */}
-    <View style={styles.line} />
   </View>
 </SafeAreaView>
   );
@@ -48,7 +31,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f8c8f9',
     padding: 20,
-    justifyContent: 'space-between',
   },
   
   content: {
@@ -116,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default UniversityCollegeSearch;
+export default Profiletab;

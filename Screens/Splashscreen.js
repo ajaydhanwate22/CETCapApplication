@@ -6,7 +6,7 @@ const SplashScreen = ({ navigation }) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-          navigation.replace('UniversityCollegeSearch'); // or whatever screen
+          navigation.replace('BottomTabs'); // or whatever screen
         }, 3000); // 3 seconds
     
         return () => clearTimeout(timer); // Cleanup on unmount

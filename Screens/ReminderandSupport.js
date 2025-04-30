@@ -33,7 +33,7 @@ const ReminderandSupport = ({navigation}) => {
       </TouchableOpacity>
 
       <TouchableOpacity
-        onPress={() => navigation.navigate('Login')}>
+        onPress={() => navigation.navigate('BottomTabs')}>
         <Text style={styles.bottomText}>Next</Text>
       </TouchableOpacity>
     </View>
