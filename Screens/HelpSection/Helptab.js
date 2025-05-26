@@ -22,7 +22,7 @@ const Helptab = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-          <Header/>
+          {/* <Header/> */}
       <View style={styles.content}>
         <View style={styles.chatContainer}>
           <View style={styles.botMessageWrapper}>

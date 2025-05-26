@@ -20,7 +20,7 @@ import EditProfileTab from './Screens/ProfileSection/EditProfileTab';
 import CapGuide from './Screens/HomeSection/CapGuide';
 import AdmissionGuide from './Screens/HomeSection/AdmissionGuide';
 import Documentneed from './Screens/HomeSection/Documentneed';
-import SplashScreen from './Screens/SplashScreen';
+// import SplashScreen from './Screens/SplashScreen';
 import CollegeFilter from './Screens/HomeSection/CollegeFilter';
 import CollegeComparison from './Screens/HomeSection/CollegeComparison';
 import CollegeSearch from './Screens/CollegeSearch';
