@@ -5,6 +5,7 @@ import {View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView, ScrollVie
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Header from '../Header';
+import Footer from '../Footer';
 
 const Documentneed = ({navigation}) => {
 
@@ -47,6 +48,8 @@ const Documentneed = ({navigation}) => {
             </View>
         </View>
   </ScrollView>
+  <Footer/>
+
 </SafeAreaView>
   );
 };

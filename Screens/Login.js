@@ -10,12 +10,15 @@ import {
 
 import facebookLogo from '../Assets/images/Facebook.png';
 import googleLogo from '../Assets/images/Google.png';
+import { useNavigation } from '@react-navigation/native';
 
-const Login = ({navigation}) => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+
+  const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
@@ -66,8 +69,8 @@ const Login = ({navigation}) => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.loginButton}>
-        <Text onPress={()=> navigation.navigate("/home")} style={styles.loginButtonText}>Login</Text>
+      <TouchableOpacity style={styles.loginButton}  onPress={() => navigation.navigate('Hometab')}>
+        <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
 
       <View style={styles.dividerContainer}>

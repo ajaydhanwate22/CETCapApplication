@@ -1,38 +1,41 @@
-// ./Screens/Home.js
-import { FontAwesome5 } from '@expo/vector-icons';
-import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView, ScrollView} from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
+// ./components/Footer.js
 
-const Footer = ({navigation}) => {
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
+
+const Footer = () => {
+
+    const navigation = useNavigation();
 
   return (
+    <View style={styles.footer}>
+      <TouchableOpacity onPress={() => navigation.navigate('Helptab')} style={styles.iconContainer}>
+        <AntDesign name="android1" size={24} color="#E30CF7" />
+        <Text style={styles.label}>Help</Text>
+      </TouchableOpacity>
 
-    <View style={{ justifyContent: 'flex-end', paddingBottom: 10, borderTopWidth:0.3, borderTopColor:'#c6eaff', backgroundColor:'red'}}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#ffff', paddingHorizontal: 50,}}>  
-             <TouchableOpacity  onPress={() => navigation.navigate('Hometab')} >
-                <AntDesign name="search1" size={20} color="#A7A2A2" />
-                <Text>hfgrjik</Text>
-            </TouchableOpacity>
-            <TouchableOpacity  onPress={() => navigation.navigate('Hometab')} >
-                <AntDesign name="search1" size={20} color="#A7A2A2" />
-            </TouchableOpacity>
-            <TouchableOpacity  onPress={() => navigation.navigate('Hometab')} >
-                <AntDesign name="search1" size={20} color="#A7A2A2" />
-            </TouchableOpacity>
-        </View>
+      <TouchableOpacity onPress={() => navigation.navigate('Hometab')} style={styles.iconContainer}>
+        <Entypo name="home" size={24} color="#E30CF7" />
+        <Text style={styles.label}>Home</Text>
+      </TouchableOpacity>
 
+      <TouchableOpacity onPress={() => navigation.navigate('Profiletab')} style={styles.iconContainer}>
+        <FontAwesome6 name="user" size={24} color="#E30CF7" />
+        <Text style={styles.label}>Profile</Text>
+      </TouchableOpacity>
     </View>
-
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
+  footer: { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center',  height: 90, backgroundColor: '#fff',borderTopColor: '#000000',borderTopWidth: 0.3,paddingBottom: 20,paddingTop: 10,},
+  iconContainer: {
+    alignItems: 'center'},
+  label: {fontSize: 12, color: '#7A7777',marginTop: 4},
 });
 
 export default Footer;

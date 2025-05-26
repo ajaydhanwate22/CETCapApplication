@@ -22,6 +22,7 @@ const Helptab = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
+          <Header/>
       <View style={styles.content}>
         <View style={styles.chatContainer}>
           <View style={styles.botMessageWrapper}>
@@ -47,12 +48,12 @@ const Helptab = ({navigation}) => {
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.actionButton}>
                     <View style={styles.thumbsUpIcon}>
-                      <Icon name="thumb-up" size={16} color="white" />
+                      {/* <Icon name="thumb-up" size={16} color="white" /> */}
                     </View>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.actionButton}>
                     <View style={styles.thumbsDownIcon}>
-                      <Icon name="thumb-down" size={16} color="white" />
+                      {/* <Icon name="thumb-down" size={16} color="white" /> */}
                     </View>
                   </TouchableOpacity>
                 </View>
@@ -114,7 +115,7 @@ const Helptab = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#fff',
   },
 
   content: {
@@ -148,7 +149,7 @@ const styles = StyleSheet.create({
 
   botMessageContainer: {
     flex: 1,
-    maxWidth: '80%',
+    maxWidth: '70%',
   },
 
   botBubble: {
@@ -243,7 +244,7 @@ const styles = StyleSheet.create({
   },
 
   userMessageContainer: {
-    maxWidth: '80%',
+    maxWidth: '60%',
   },
 
   userBubble: {

@@ -6,8 +6,8 @@ const SplashScreen = ({ navigation }) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-          navigation.replace('UniversityCollegeSearch'); 
-        }, 3000); 
+          navigation.replace('UniversityCollegeSearch'); // or whatever screen
+        }, 3000); // 3 seconds
     
         return () => clearTimeout(timer); 
       }, [navigation]);
@@ -24,28 +24,10 @@ const SplashScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  innerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  logo: {
-    width: 180,  
-    height: 180, 
-  },
-  line: {
-    position: 'absolute',
-    bottom: 20, 
-    alignSelf: 'center',
-    width: '40%',
-    height: 10,
-    borderRadius: 20,
-    backgroundColor: '#E6E2E2',
-  },
+  container: {flex: 1,  justifyContent: 'center',  alignItems: 'center'},
+  innerContainer: {justifyContent: 'center',alignItems: 'center',},
+  logo: {width: 180,height: 180},
+  line: {position: 'absolute', bottom: 20,alignSelf: 'center', width: '40%',height: 10,borderRadius: 20, backgroundColor: '#E6E2E2'},
 });
 
 export default SplashScreen;
