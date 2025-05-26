@@ -26,7 +26,6 @@ import CollegeComparison from './Screens/HomeSection/CollegeComparison';
 import CollegeSearch from './Screens/CollegeSearch';
 
 const Stack = createNativeStackNavigator();
-
 export default function App() {
   return (
     <NavigationContainer>

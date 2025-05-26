@@ -11,10 +11,10 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-// import Icon from 'react-native-vector-icons/MaterialIcons'; // Import for React Native CLI
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import chatUser from '../../Assets/images/chat-user.png';
 import chatBot from '../../Assets/images/chat-logo.png';
-import Header from '../Header';
+import IonIcon  from 'react-native-vector-icons/Ionicons';
 
 const Helptab = ({navigation}) => {
   const [inputFocused, setInputFocused] = useState(false);
@@ -43,7 +43,7 @@ const Helptab = ({navigation}) => {
                 <View style={styles.messageActions}>
                   <TouchableOpacity style={styles.actionButton}>
                     <View style={styles.copyIcon}>
-                      {/* <Icon name="content-copy" size={16} color="#6a1b9a" /> */}
+                      <Icon name="content-copy" size={16} color="white" />
                     </View>
                   </TouchableOpacity>
                   <TouchableOpacity style={styles.actionButton}>
@@ -104,7 +104,7 @@ const Helptab = ({navigation}) => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.sendButton}>
-            <Text style={styles.sendIcon}>→</Text>
+            <IonIcon name="arrow-forward-outline" size={20} color="white" />
           </TouchableOpacity>
         </KeyboardAvoidingView>
       </View>
@@ -138,14 +138,13 @@ const styles = StyleSheet.create({
 
   botIconContainer: {
     marginRight: 8,
-    marginBottom: 15,
   },
 
   botIcon: {
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#8A2BE2', // Placeholder color if image doesn't load
+    backgroundColor: '#8A2BE2',
   },
 
   botMessageContainer: {
@@ -176,7 +175,12 @@ const styles = StyleSheet.create({
 
   messageActions: {
     flexDirection: 'row',
-    backgroundColor: '#3C096C',
+    backgroundColor: '#7B2CBF',
+    borderRadius: 10,
+    padding: 5,
+    marginTop: -25,
+    marginRight: 15,
+    // margin: 10,
   },
 
   actionButton: {

@@ -9,9 +9,8 @@ const SplashScreen = ({ navigation }) => {
           navigation.replace('UniversityCollegeSearch'); // or whatever screen
         }, 3000); // 3 seconds
     
-        return () => clearTimeout(timer); // Cleanup on unmount
+        return () => clearTimeout(timer); 
       }, [navigation]);
-
 
   return (
     <LinearGradient colors={['#CA01DD', '#F8A9FF']} start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }} style={styles.container}>

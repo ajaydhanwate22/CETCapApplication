@@ -8,6 +8,7 @@ import {
   StyleSheet,
   ScrollView,
   Modal,
+  SafeAreaView,
 } from 'react-native';
 // import Icon from 'react-native-vector-icons/Ionicons';
 import {launchImageLibrary} from 'react-native-image-picker';
@@ -15,8 +16,15 @@ import profileImage from '../../Assets/images/profile.png';
 
 const EditProfileTab = () => {
   const [imageUri, setImageUri] = useState(null);
+  const [firstName, setFirstName] = useState('Sabrina');
+  const [lastName, setLastName] = useState('Aryan');
+  const [username, setUsername] = useState('@Sabrina');
+  const [email, setEmail] = useState('@SabrinaAry208@gmail.com');
+  const [phoneNumber, setPhoneNumber] = useState('+234     904 6470');
   const [gender, setGender] = useState('');
   const [showGenderModal, setShowGenderModal] = useState(false);
+  const [birthDate, setBirthDate] = useState('');
+  const [showBirthModal, setShowBirthModal] = useState(false);
 
   const pickImage = () => {
     const options = {
@@ -34,72 +42,114 @@ const EditProfileTab = () => {
     setShowGenderModal(!showGenderModal);
   };
 
+  const toggleBirthModal = () => {
+    setShowBirthModal(!showBirthModal);
+  };
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <TouchableOpacity style={styles.backButton}>
-        {/* <Icon name="chevron-back-outline" size={24} color="#000" /> */}
-      </TouchableOpacity>
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView style={styles.scrollView}>
+        <View style={styles.container}>
+          <View style={styles.header}>
+            <TouchableOpacity style={styles.backButton}>
+              <Icon name="chevron-back-outline" size={24} color="#000" />
+            </TouchableOpacity>
+            <Text style={styles.headerText}>Edit Profile</Text>
+            <View style={styles.placeholder} />
+          </View>
 
-      <Text style={styles.header}>Edit Profile</Text>
+          <View style={styles.avatarContainer}>
+            <Image
+              source={imageUri ? {uri: imageUri} : profileImage}
+              style={styles.avatar}
+            />
+            <TouchableOpacity style={styles.cameraIcon} onPress={pickImage}>
+              <Icon name="camera" size={18} color="#000" />
+            </TouchableOpacity>
+          </View>
 
-      <View style={styles.avatarContainer}>
-        <Image
-          source={imageUri ? {uri: imageUri} : profileImage}
-          style={styles.avatar}
-        />
-        <TouchableOpacity style={styles.cameraIcon} onPress={pickImage}>
-          {/* <Icon name="camera" size={18} color="#fff" /> */}
-        </TouchableOpacity>
-      </View>
+          <Text style={styles.subHeader}>Edit Profile</Text>
 
-      <Text style={styles.subHeader}>Edit Profile</Text>
+          <View style={styles.formContainer}>
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>First Name</Text>
+              <TextInput
+                style={styles.input}
+                value={firstName}
+                onChangeText={text => setFirstName(text)}
+                placeholder="First Name"
+              />
+            </View>
 
-      {[
-        {label: 'First Name', value: 'Sabrina'},
-        {label: 'Last Name', value: 'Aryan'},
-        {label: 'Username', value: '@Sabrina'},
-        {
-          label: 'Email',
-          value: '@SabrinaAry208@gmail.com',
-          keyboardType: 'email-address',
-        },
-        {
-          label: 'Phone Number',
-          value: '+234 904 6470',
-          keyboardType: 'phone-pad',
-        },
-      ].map((field, idx) => (
-        <View style={styles.inputGroup} key={idx}>
-          <Text style={styles.label}>{field.label}</Text>
-          <TextInput
-            style={styles.input}
-            value={field.value}
-            placeholder={field.label}
-            keyboardType={field.keyboardType || 'default'}
-          />
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Last Name</Text>
+              <TextInput
+                style={styles.input}
+                value={lastName}
+                onChangeText={text => setLastName(text)}
+                placeholder="Last Name"
+              />
+            </View>
+
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Username</Text>
+              <TextInput
+                style={styles.input}
+                value={username}
+                onChangeText={text => setUsername(text)}
+                placeholder="Username"
+              />
+            </View>
+
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Email</Text>
+              <TextInput
+                style={styles.input}
+                value={email}
+                onChangeText={text => setEmail(text)}
+                placeholder="Email"
+                keyboardType="email-address"
+              />
+            </View>
+
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Phone Number</Text>
+              <TextInput
+                style={styles.input}
+                value={phoneNumber}
+                onChangeText={text => setPhoneNumber(text)}
+                placeholder="Phone Number"
+                keyboardType="phone-pad"
+              />
+            </View>
+
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Birth</Text>
+              <TouchableOpacity
+                style={styles.dropdown}
+                onPress={toggleBirthModal}>
+                <Text style={styles.dropdownText}>{birthDate || 'Birth'}</Text>
+                <Icon name="chevron-down" size={18} color="#000" />
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.inputGroup}>
+              <Text style={styles.label}>Gender</Text>
+              <TouchableOpacity
+                style={styles.dropdown}
+                onPress={toggleGenderModal}>
+                <Text style={styles.dropdownText}>{gender || 'Gender'}</Text>
+                <Icon name="chevron-down" size={18} color="#000" />
+              </TouchableOpacity>
+            </View>
+
+            <TouchableOpacity style={styles.changePasswordButton}>
+              <Text style={styles.buttonText}>Change Password</Text>
+              <Icon name="lock-closed" size={16} color="#fff" />
+            </TouchableOpacity>
+          </View>
         </View>
-      ))}
-
-      <View style={styles.inputGroup}>
-        <Text style={styles.label}>Birth</Text>
-        <TouchableOpacity style={styles.dropdown}>
-          <Text style={styles.dropdownText}>Select Birth Date</Text>
-          {/* <Icon name="chevron-down" size={18} color="#000" /> */}
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.inputGroup}>
-        <Text style={styles.label}>Gender</Text>
-        <TouchableOpacity style={styles.dropdown} onPress={toggleGenderModal}>
-          <Text style={styles.dropdownText}>{gender || 'Select Gender'}</Text>
-          {/* <Icon name="chevron-down" size={18} color="#000" /> */}
-        </TouchableOpacity>
-      </View>
-
-      <TouchableOpacity style={styles.changePassword}>
-        <Text style={styles.buttonText}>Change Password</Text>
-        {/* <Icon name="lock-closed" size={16} color="#fff" /> */}
-      </TouchableOpacity>
+      </ScrollView>
 
       {/* Gender Modal */}
       <Modal
@@ -121,37 +171,83 @@ const EditProfileTab = () => {
                 <Text style={styles.modalOptionText}>{option}</Text>
               </TouchableOpacity>
             ))}
-         
+            <TouchableOpacity onPress={toggleGenderModal}>
+              <Text style={styles.modalCancel}>Cancel</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </Modal>
-    </ScrollView>
+
+      {/* Birth Date Modal */}
+      <Modal
+        visible={showBirthModal}
+        transparent
+        animationType="slide"
+        onRequestClose={toggleBirthModal}>
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Select Birth Date</Text>
+            {/* Simple placeholder for date picker */}
+            <TouchableOpacity
+              style={styles.modalOption}
+              onPress={() => {
+                setBirthDate('January 1, 2000');
+                toggleBirthModal();
+              }}>
+              <Text style={styles.modalOptionText}>Select Date</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={toggleBirthModal}>
+              <Text style={styles.modalCancel}>Cancel</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
+    </SafeAreaView>
   );
 };
 
 export default EditProfileTab;
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 20,
+  safeArea: {
+    flex: 1,
     backgroundColor: '#fff',
-    paddingBottom: 60,
-    alignItems: 'center',
   },
-  backButton: {
-    alignSelf: 'flex-start',
-    marginBottom: 10,
+  scrollView: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    paddingBottom: 40,
   },
   header: {
-    fontSize: 20,
-    fontWeight: '600',
-    marginBottom: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+    marginTop: 20,
+  },
+  headerText: {
+    fontSize: 18,
+    fontWeight: '500',
     textAlign: 'center',
+  },
+  backButton: {
+    padding: 5,
+  },
+  placeholder: {
+    width: 24, // Same width as the back button for balance
   },
   avatarContainer: {
     position: 'relative',
     alignItems: 'center',
-    marginBottom: 10,
+    marginTop: 20,
+    marginBottom: 15,
   },
   avatar: {
     width: 100,
@@ -162,32 +258,37 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     right: 0,
-    backgroundColor: '#000',
+    backgroundColor: '#fff',
     borderRadius: 15,
     padding: 5,
+    borderWidth: 1,
+    borderColor: '#f0f0f0',
   },
   subHeader: {
     fontSize: 18,
     fontWeight: '600',
-    marginBottom: 15,
+    marginBottom: 20,
     textAlign: 'center',
   },
+  formContainer: {
+    width: '100%',
+    paddingHorizontal: 20,
+  },
   inputGroup: {
-    width: '80%',
-    marginBottom: 12,
+    width: '100%',
+    marginBottom: 15,
   },
   label: {
-    marginBottom: 4,
-    color: '#00000096',
+    marginBottom: 6,
+    color: '#666',
     fontSize: 14,
-    fontWeight: '500',
   },
   input: {
     borderWidth: 1,
-    borderColor: '#ccc',
-    paddingVertical: 10,
+    borderColor: '#ddd',
+    paddingVertical: 12,
     paddingHorizontal: 15,
-    borderRadius: 10,
+    borderRadius: 8,
     fontSize: 14,
   },
   dropdown: {
@@ -195,23 +296,24 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 10,
-    padding: 12,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 15,
   },
   dropdownText: {
     color: '#555',
     fontSize: 14,
   },
-  changePassword: {
+  changePasswordButton: {
     flexDirection: 'row',
     backgroundColor: '#083E70',
-    paddingVertical: 12,
+    paddingVertical: 14,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 25,
     marginTop: 20,
-    paddingHorizontal: 20,
+    width: '100%',
   },
   buttonText: {
     color: '#fff',
@@ -238,16 +340,19 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   modalOption: {
-    paddingVertical: 10,
+    paddingVertical: 12,
     width: '100%',
     alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#f0f0f0',
   },
   modalOptionText: {
     fontSize: 16,
   },
   modalCancel: {
-    marginTop: 10,
+    marginTop: 15,
     color: 'red',
     fontSize: 16,
+    fontWeight: '500',
   },
 });
