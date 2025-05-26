@@ -6,12 +6,11 @@ const SplashScreen = ({ navigation }) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-          navigation.replace('BottomTabs'); // or whatever screen
-        }, 3000); // 3 seconds
+          navigation.replace('UniversityCollegeSearch'); 
+        }, 3000); 
     
-        return () => clearTimeout(timer); // Cleanup on unmount
+        return () => clearTimeout(timer); 
       }, [navigation]);
-
 
   return (
     <LinearGradient colors={['#CA01DD', '#F8A9FF']} start={{ x: 0, y: 0 }} end={{ x: 0, y: 1 }} style={styles.container}>
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
   },
   line: {
     position: 'absolute',
-    bottom: 20, // बॉटम से कितना ऊपर दिखे
+    bottom: 20, 
     alignSelf: 'center',
     width: '40%',
     height: 10,

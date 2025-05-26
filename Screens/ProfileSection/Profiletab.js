@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -13,6 +13,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import profileImage from '../../Assets/images/profile.png';
 
 const Profiletab = ({navigation}) => {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{paddingBottom: 20}}>
@@ -41,7 +44,7 @@ const Profiletab = ({navigation}) => {
             <View style={styles.buttonRow}>
               <TouchableOpacity style={styles.button}>
                 <Text
-                  onPress={() => navigation.navigate('EditProfile')} 
+                  onPress={() => navigation.navigate('EditProfile')}
                   style={styles.buttonText}>
                   Edit Profile
                 </Text>
@@ -54,12 +57,16 @@ const Profiletab = ({navigation}) => {
           </View>
         </View>
 
-        {/* Settings List */}
         <View style={styles.settingsGroup}>
           <View style={styles.settingsItem}>
             <Icon name="notifications-outline" size={22} color="#699BF7" />
             <Text style={styles.settingsText}>Mute notifications</Text>
-            <Switch />
+            <Switch
+              value={isEnabled}
+              onValueChange={toggleSwitch}
+              thumbColor={isEnabled ? '#699BF7' : '#f4f3f4'}
+              trackColor={{false: '#767577', true: '#A9C4F7'}}
+            />
           </View>
 
           <View style={styles.settingsItem}>
@@ -99,7 +106,6 @@ const Profiletab = ({navigation}) => {
           </View>
         </View>
 
-        {/* Logout */}
         <TouchableOpacity style={styles.logoutButton}>
           <Icon name="log-out-outline" size={22} color="#F80E0E" />
           <Text style={styles.logoutText}>Logout</Text>
@@ -118,14 +124,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   header: {
-    marginTop: 10,
+    marginTop: 30,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   headerTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: 500,
+    color: '#000000',
   },
   profileContainer: {
     flexDirection: 'row',
@@ -147,7 +154,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     right: 0,
-    // backgroundColor: '#007AFF',
     padding: 4,
     borderRadius: 8,
   },
@@ -227,17 +233,14 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   settingsGroup: {
-    backgroundColor: '#f9f9f9',
-    borderRadius: 10,
     padding: 12,
-    marginBottom: 16,
+    marginBottom: 8,
+    boxShadow: '0px 2px 4px #00000040',
   },
   settingsItem: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 12,
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#ddd',
   },
   settingsText: {
     marginLeft: 16,
@@ -248,15 +251,18 @@ const styles = StyleSheet.create({
   logoutButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 16,
-    padding: 12,
-    borderTopWidth: 1,
-    borderColor: '#eee',
+    height: 60,
+    marginTop: 8,
+    paddingHorizontal: 12,
+    boxShadow: '0px 2px 4px #00000040',
+    backgroundColor: '#fff',
   },
+
   logoutText: {
     color: '#F80E0E',
     marginLeft: 12,
     fontSize: 16,
     fontWeight: '500',
+    lineHeight: 44,
   },
 });

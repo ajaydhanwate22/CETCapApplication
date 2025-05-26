@@ -74,14 +74,14 @@ function BottomTabs() {
         tabBarInactiveTintColor: '#E30CF7',
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: '#fff', // Background color for the tab bar
-          height: 90,               // Height of the tab bar
-          paddingBottom: 10,         // Padding at the bottom for better spacing
+          backgroundColor: '#fff',
+          height: 90,              
+          paddingBottom: 10,        
           paddingTop:10,
           borderTopColor: '#000000',
           borderTopWidth: 1.5, 
-          elevation: 3, // Android shadow off
-          shadowColor: 'transparent', // iOS shadow off
+          elevation: 3, 
+          shadowColor: 'transparent', 
         },
         tabBarIconStyle: {
           size: 35,               
@@ -94,9 +94,6 @@ function BottomTabs() {
     </Tab.Navigator>
   );
 }
-
-
-
 export default function App() {
   return (
     <NavigationContainer>
