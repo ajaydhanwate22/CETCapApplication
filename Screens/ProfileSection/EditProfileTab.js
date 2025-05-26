@@ -9,7 +9,7 @@ import {
   ScrollView,
   Modal,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
 import {launchImageLibrary} from 'react-native-image-picker';
 import profileImage from '../../Assets/images/profile.png';
 
@@ -37,7 +37,7 @@ const EditProfileTab = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <TouchableOpacity style={styles.backButton}>
-        <Icon name="chevron-back-outline" size={24} color="#000" />
+        {/* <Icon name="chevron-back-outline" size={24} color="#000" /> */}
       </TouchableOpacity>
 
       <Text style={styles.header}>Edit Profile</Text>
@@ -48,7 +48,7 @@ const EditProfileTab = () => {
           style={styles.avatar}
         />
         <TouchableOpacity style={styles.cameraIcon} onPress={pickImage}>
-          <Icon name="camera" size={18} color="#fff" />
+          {/* <Icon name="camera" size={18} color="#fff" /> */}
         </TouchableOpacity>
       </View>
 
@@ -84,7 +84,7 @@ const EditProfileTab = () => {
         <Text style={styles.label}>Birth</Text>
         <TouchableOpacity style={styles.dropdown}>
           <Text style={styles.dropdownText}>Select Birth Date</Text>
-          <Icon name="chevron-down" size={18} color="#000" />
+          {/* <Icon name="chevron-down" size={18} color="#000" /> */}
         </TouchableOpacity>
       </View>
 
@@ -92,13 +92,13 @@ const EditProfileTab = () => {
         <Text style={styles.label}>Gender</Text>
         <TouchableOpacity style={styles.dropdown} onPress={toggleGenderModal}>
           <Text style={styles.dropdownText}>{gender || 'Select Gender'}</Text>
-          <Icon name="chevron-down" size={18} color="#000" />
+          {/* <Icon name="chevron-down" size={18} color="#000" /> */}
         </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={styles.changePassword}>
         <Text style={styles.buttonText}>Change Password</Text>
-        <Icon name="lock-closed" size={16} color="#fff" />
+        {/* <Icon name="lock-closed" size={16} color="#fff" /> */}
       </TouchableOpacity>
 
       {/* Gender Modal */}

@@ -21,10 +21,10 @@ const Header = () => {
                     </TouchableOpacity>
                     <Text style={{fontSize:24, color:"#00000", fontWeight:'bold'}}>Logo <Text style={{fontSize:24, color:"#E30CF7", fontWeight:'bold'}}>text</Text></Text>
                 <View style={{flexDirection:'row', alignItems:"center", justifyContent:'center'}}>    
-                    <TouchableOpacity style={{ borderColor: "#F8F2F2", borderWidth: 1.5, width: 50,  height: 50, borderRadius: 25, justifyContent: "center", alignItems: "center", }}>
+                    <TouchableOpacity style={{ borderColor: "#F8F2F2", borderWidth: 1.5, width: 50,  height: 50, borderRadius: 25, justifyContent: "center", alignItems: "center", }} onPress={() => navigation.navigate('CollegeSearch')}>
                     <AntDesign name="search1" size={20} color="#A7A2A2" />
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ borderColor: "#F8F2F2", borderWidth: 1.5, width: 50,  height: 50, borderRadius: 25, justifyContent: "center", alignItems: "center", }}>
+                    <TouchableOpacity style={{ borderColor: "#F8F2F2", borderWidth: 1.5, width: 50,  height: 50, borderRadius: 25, justifyContent: "center", alignItems: "center", }} onPress={() => navigation.navigate('Notifications')}>
                     <FontAwesome name="bell" size={20} color="#A7A2A2" />
                     </TouchableOpacity>
                 </View>
@@ -34,10 +34,6 @@ const Header = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
 });
 
 export default Header;

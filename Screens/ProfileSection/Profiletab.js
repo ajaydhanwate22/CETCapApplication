@@ -9,7 +9,7 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/Ionicons';
 import profileImage from '../../Assets/images/profile.png';
 
 const Profiletab = ({navigation}) => {
@@ -18,11 +18,11 @@ const Profiletab = ({navigation}) => {
       <ScrollView contentContainerStyle={{paddingBottom: 20}}>
         <View style={styles.header}>
           <TouchableOpacity>
-            <Icon name="chevron-back-outline" size={24} color="#000000" />
+            {/* <Icon name="chevron-back-outline" size={24} color="#000000" /> */}
           </TouchableOpacity>
           <Text style={styles.headerTitle}>My Profile</Text>
           <TouchableOpacity>
-            <Icon name="settings-outline" size={24} color="#000" />
+            {/* <Icon name="settings-outline" size={24} color="#000" /> */}
           </TouchableOpacity>
         </View>
         <View style={styles.profileContainer}>
@@ -30,7 +30,7 @@ const Profiletab = ({navigation}) => {
             <Image source={profileImage} style={styles.profileImage} />
 
             <TouchableOpacity style={styles.cameraIcon}>
-              <Icon name="camera" size={20} color="#fff" />
+              {/* <Icon name="camera" size={20} color="#fff" /> */}
             </TouchableOpacity>
           </View>
 
@@ -57,51 +57,51 @@ const Profiletab = ({navigation}) => {
         {/* Settings List */}
         <View style={styles.settingsGroup}>
           <View style={styles.settingsItem}>
-            <Icon name="notifications-outline" size={22} color="#699BF7" />
+            {/* <Icon name="notifications-outline" size={22} color="#699BF7" /> */}
             <Text style={styles.settingsText}>Mute notifications</Text>
             <Switch />
           </View>
 
           <View style={styles.settingsItem}>
-            <Icon name="musical-notes-outline" size={22} color="#699BF7" />
+            {/* <Icon name="musical-notes-outline" size={22} color="#699BF7" /> */}
             <Text style={styles.settingsText}>Custom notifications</Text>
           </View>
 
           <View style={styles.settingsItem}>
-            <Icon name="folder-outline" size={22} color="#699BF7" />
+            {/* <Icon name="folder-outline" size={22} color="#699BF7" /> */}
             <Text style={styles.settingsText}>Media visibility</Text>
           </View>
         </View>
 
         <View style={styles.settingsGroup}>
           <View style={styles.settingsItem}>
-            <Icon name="globe-outline" size={22} color="#699BF7" />
+            {/* <Icon name="globe-outline" size={22} color="#699BF7" /> */}
             <Text style={styles.settingsText}>Language</Text>
-            <Icon name="chevron-forward-outline" size={24} color="#000000" />
+            {/* <Icon name="chevron-forward-outline" size={24} color="#000000" /> */}
           </View>
 
           <View style={styles.settingsItem}>
-            <Icon name="location-outline" size={22} color="#699BF7" />
+            {/* <Icon name="location-outline" size={22} color="#699BF7" /> */}
             <Text style={styles.settingsText}>Location</Text>
-            <Icon name="chevron-forward-outline" size={24} color="#000000" />
+            {/* <Icon name="chevron-forward-outline" size={24} color="#000000" /> */}
           </View>
 
           <View style={styles.settingsItem}>
-            <Icon name="download-outline" size={22} color="#699BF7" />
+            {/* <Icon name="download-outline" size={22} color="#699BF7" /> */}
             <Text style={styles.settingsText}>Download</Text>
-            <Icon name="chevron-forward-outline" size={24} color="#000000" />
+            {/* <Icon name="chevron-forward-outline" size={24} color="#000000" /> */}
           </View>
 
           <View style={styles.settingsItem}>
-            <Icon name="trash-outline" size={22} color="#699BF7" />
+            {/* <Icon name="trash-outline" size={22} color="#699BF7" /> */}
             <Text style={styles.settingsText}>Clear History</Text>
-            <Icon name="chevron-forward-outline" size={24} color="#000000" />
+            {/* <Icon name="chevron-forward-outline" size={24} color="#000000" /> */}
           </View>
         </View>
 
         {/* Logout */}
         <TouchableOpacity style={styles.logoutButton}>
-          <Icon name="log-out-outline" size={22} color="#F80E0E" />
+          {/* <Icon name="log-out-outline" size={22} color="#F80E0E" /> */}
           <Text style={styles.logoutText}>Logout</Text>
         </TouchableOpacity>
       </ScrollView>

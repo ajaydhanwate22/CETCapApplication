@@ -4,20 +4,19 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity, SafeAreaView, ScrollView} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Footer from '../Footer';
 
 const Hometab = ({navigation}) => {
 
   return (
 <SafeAreaView style={styles.container}>
-    <ScrollView>
-
-        {/* header */}
-        <View style={{paddingTop:40, paddingHorizontal:20, borderBottomWidth:0.3, borderBottomColor:"#000000", paddingBottom:20}}>
+            {/* header */}
+            <View style={{paddingTop:40, paddingHorizontal:20, borderBottomWidth:0.3, borderBottomColor:"#000000", paddingBottom:20}}>
             <View style={{justifyContent:'space-between', flexDirection:'row', alignItems:"center"}}>
                     {/* <Image source={require('../../Assets/images/universitylogo.png')} style={{height: 50, width:"50%"}}/> */}
                     <Text style={{fontSize:24, color:"#00000", fontWeight:'bold'}}>Logo <Text style={{fontSize:24, color:"#E30CF7", fontWeight:'bold'}}>text</Text></Text>
                 <View style={{flexDirection:'row', alignItems:"center", justifyContent:'center'}}>    
-                    <TouchableOpacity style={{ borderColor: "#F8F2F2", borderWidth: 1.5, width: 50,  height: 50, borderRadius: 25, justifyContent: "center", alignItems: "center", }}>
+                    <TouchableOpacity style={{ borderColor: "#F8F2F2", borderWidth: 1.5, width: 50,  height: 50, borderRadius: 25, justifyContent: "center", alignItems: "center", }}  onPress={() => navigation.navigate('CollegeSearch')}>
                     <AntDesign name="search1" size={20} color="#A7A2A2" />
                     </TouchableOpacity>
                     <TouchableOpacity style={{ borderColor: "#F8F2F2", borderWidth: 1.5, width: 50,  height: 50, borderRadius: 25, justifyContent: "center", alignItems: "center", }}  onPress={() => navigation.navigate('Notifications')}>
@@ -26,17 +25,16 @@ const Hometab = ({navigation}) => {
                 </View>
             </View>
         </View>
-
-
+    <ScrollView>
         {/* body contained */}
 
-        <View style={{paddingHorizontal:20, paddingVertical:40}} >
-            <View style={{width:'100%',justifyContent:'space-between', alignItems:'center', flexDirection:'row',paddingVertical:10}}>
-                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10,padding:20}}>
+        <View style={{paddingHorizontal:20, paddingVertical:20}} >
+            <View style={{width:'100%',justifyContent:'space-between', alignItems:'center', flexDirection:'row',paddingVertical:10}} >
+                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10,padding:20}} onPress={() => navigation.navigate('CollegeComparison')}>
                     <Text style={{fontSize:18, color:"#00000", fontWeight:'bold'}}>Campus</Text>
                     <Text style={{fontSize:18, color:"#00000", fontWeight:'bold'}}>Unlocked</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10,padding:20}}>
+                <TouchableOpacity style={{width:"47%",height:200, backgroundColor:'#E700FD40', alignItems:"center", justifyContent:'center', borderRadius:10,padding:20}} onPress={() => navigation.navigate('CollegeFilter')} >
                 <Text style={{fontSize:18, color:"#00000", fontWeight:'bold',textAlign:'center'}}>Filter</Text>
                 <Text style={{fontSize:18, color:"#00000", fontWeight:'bold',textAlign:'center'}}>Collages</Text>
                 </TouchableOpacity>
@@ -61,6 +59,7 @@ const Hometab = ({navigation}) => {
             </View>
         </View>
   </ScrollView>
+  <Footer/>
 </SafeAreaView>
   );
 };
